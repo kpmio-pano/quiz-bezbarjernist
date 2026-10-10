@@ -337,7 +337,7 @@ function loadQuestion() {
     });
     document.getElementById('feedback-box').className = 'feedback';
     document.getElementById('feedback-box').textContent = '';
-    document.getElementById('hint-btn').style.display = 'none';
+    document.getElementById('hint-btn').style.display = 'block';
     document.getElementById('hint-btn').textContent = '💡 Показати підказку';
     document.getElementById('hint-box').className = 'hint-box';
     document.getElementById('hint-text').textContent = q.hint;
@@ -361,7 +361,8 @@ function selectAnswer(idx) {
         fb.className = 'feedback feedback-error show';
     }
     fb.textContent = q.comments[idx];
-    document.getElementById('hint-btn').style.display = 'block';
+    document.getElementById('hint-btn').style.display = 'none';
+    document.getElementById('hint-box').className = 'hint-box';
     const nextBtn = document.getElementById('next-btn');
     nextBtn.style.display = 'block';
     nextBtn.textContent = current < quizData.length - 1 ? 'Далі →' : 'Завершити';
